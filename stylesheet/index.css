@@ -1,0 +1,56 @@
+
+
+
+.coding-container {
+	
+	border: 2px solid blue;
+	
+	width: 100%;
+	height: 60vh;
+	
+	
+}
+
+.coding-editor {
+	
+	border: 2px solid red;
+	
+	width: 100%;
+	height: 100%;
+}
+
+.line-list {
+	/*list-style-type:none;*/
+}
+.editor-line {
+	
+}
+
+.editor {
+	
+	width: 95%;
+}
+
+.chatbox {
+	
+	border: 2px solid red;
+	width: 500px;
+	height: 200px;
+}
+.chatbox-list {
+	
+	border: 2px solid yellow;
+	width: 100%;
+}
+.chatbox-list-item {
+	
+}
+
+.sendChat {
+	border: 2px solid green;
+	width: 100px;
+	height: 100px;
+}
+.form-box {
+	border: 2px solid blue;
+}
