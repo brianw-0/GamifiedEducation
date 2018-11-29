@@ -46,6 +46,26 @@ class squadron {
     	this.soldiers_alive = this.soldiers_alive - enemies
 		total_enemies = total_enemies - enemies                // edit this line so that the total amount of enemies only decreases if there are surviving soldiers
     }
+	
+	run(){
+		document.write("We are cowards!")
+	}
+	
+	transfer_to(squadron, amount){
+		this.soldiers_alive = this.soldiers_alive - amount           // edit so they can't add too many troops. Add an option for max that adds all survivors.
+		squadron.soldiers_alive = squadron.soldiers_alive + amount
+	}
+	
+	attack_dragon(){
+		if(this.soldiers_alive > 100){
+			this.soldiers_alive = 1
+			document.write("The dragon is slayed!")
+		}
+		
+		else{
+			document.write("Your men are all dead and the dragon remains!")
+		}
+	}
 }
 
 // Action 3
@@ -63,25 +83,26 @@ var total_enemies = 300;
 
 var attacks = 1
 
-// User will add all or part of this loop! ************************************************************************************
+// User will add all or part of this loop! Either they'll call it 3 times for each squadron, or create a larger loop. *********
 for(attacks = 1; archers.check_strength() > 50; attacks++){
 	archers.fight(20)
     surviving = archers.check_strength();
 	document.write(surviving + "<br>");
 }
-// *************************************************************************************************************************
+// ****************************************************************************************************************************
 
 document.write("Enemies: " + total_enemies)
 
 // Action 5
-// You've defeated the enemy, but a dragon appears and is guarding the castle! Only attack if you have atleast 100 troops left alive.
+// You've defeated the enemy, but a dragon appears and is guarding the castle! Atleast 100 troops will be needed to defeated
+// this menace. Rally your troops and combine the fragmented squadrons into one large squadron by using the transfer_to function.
+// Then gauge the size of your squadron and attack if your army is large enough. Run away if you don't have the numbers.
 
-total_troops_left = archers.check_strength() + swordsmen.check_strength() + spears.check_strength();
+spears.transfer_to(archers, 50);
+swordsmen.transfer_to(archers, 50);
 
 if (total_troops_left > 100) {
 	archers.attack_dragon();
-	spears.attack_dragon();
-	swordsmen.attack_dragon();
 }
 
 else { 
